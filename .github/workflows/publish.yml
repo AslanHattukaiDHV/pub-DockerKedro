@@ -18,7 +18,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: AslanHattukai/pub-DockerKedro:latest
+          tags: AslanHattukai/pub-dockerkedro:latest
           registry: docker.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
