@@ -13,18 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and publish Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: aslanhattukai/pub-dockerkedro:latest
-          registry: docker.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Docker image
+        run: docker build . --tag aslanhattukai/pub-dockerkedro:latest
 
-      - name: Build the Docker image
-        run: |
-          docker build . --tag aslanhattukai/pub-dockerkedro:latest
-          docker run aslanhattukai/pub-dockerkedro:latest
-          docker push aslanhattukai/pub-dockerkedro:latest
+      - name: Publish Docker image
+        run: docker push aslanhattukai/pub-dockerkedro:latest
