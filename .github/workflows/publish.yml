@@ -18,13 +18,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: AslanHattukai/pub-dockerkedro:latest
+          tags: aslanhattukai/pub-dockerkedro:latest
           registry: docker.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image
         run: |
-          docker build . --tag docker.io/AslanHattukaiDHV/pub-DockerKedro:latest
-          docker run docker.io/AslanHattukaiDHV/pub-DockerKedro:latest
-          docker push docker.io/AslanHattukaiDHV/pub-DockerKedro:latest
+          docker build . --tag aslanhattukai/pub-dockerkedro:latest
+          docker run aslanhattukai/pub-dockerkedro:latest
+          docker push aslanhattukai/pub-dockerkedro:latest
